@@ -42,8 +42,23 @@ saveRDS(coad_se, file = "data/tcga_coad_summarized_experiment.rds")
 
 # Save metadata separately for easier inspection
 metadata_df <- as.data.frame(colData(coad_se))
-write.csv(metadata_df, file = "data/tcga_coad_metadata.csv", row.names = FALSE)
 
+# Convert list columns to character so they can be written to CSV
+flatten_list_column <- function(x) {
+  vapply(x, function(y) {
+    if (is.null(y) || length(y) == 0) {
+      return(NA_character_)
+    }
+    paste(as.character(y), collapse = "; ")
+  }, character(1))
+}
+
+list_cols <- vapply(metadata_df, is.list, logical(1))
+if (any(list_cols)) {
+  metadata_df[list_cols] <- lapply(metadata_df[list_cols], flatten_list_column)
+}
+
+write.csv(metadata_df, file = "data/tcga_coad_metadata.csv", row.names = FALSE)
 cat("Download and preparation complete.\n")
 cat("Files saved:\n")
 cat("- data/tcga_coad_summarized_experiment.rds\n")

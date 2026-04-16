@@ -47,3 +47,21 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+
+# Large generated/downloaded data
+data/*.rds
+data/*.csv
+data/*.tsv
+data/*.txt
+data/*.gz
+
+GDCdata/
+*.rds
+MANIFEST.txt
+
+# Keep folder structure
+!data/.gitkeep
+!figures/.gitkeep
+!results/.gitkeep
+!scripts/.gitkeep
