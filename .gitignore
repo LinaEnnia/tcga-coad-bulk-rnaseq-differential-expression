@@ -65,3 +65,12 @@ MANIFEST.txt
 !figures/.gitkeep
 !results/.gitkeep
 !scripts/.gitkeep
+
+# Large generated result files
+results/*.rds
+results/tcga_coad_deseq2_results_full.csv
+results/tcga_coad_deseq2_results_significant.csv
+
+# Keep lightweight summary results
+!results/tcga_coad_top30_heatmap_genes.csv
+!results/.gitkeep
