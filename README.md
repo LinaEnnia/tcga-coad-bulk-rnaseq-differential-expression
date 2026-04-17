@@ -46,15 +46,24 @@ Raw count data were retrieved using `TCGAbiolinks`, filtered for tumor-vs-normal
 - **23,544 genes** were significant at `padj < 0.05`.
 - The top differentially expressed genes were sufficient to visually separate most tumor and normal samples in the heatmap.
 
-## Main output files
+## Selected figures
 
-### Figures
-- `figures/tcga_coad_pca_plot.png`
-- `figures/tcga_coad_volcano_plot.png`
-- `figures/tcga_coad_ma_plot.png`
-- `figures/tcga_coad_top30_heatmap.png`
+### PCA: tumor vs normal separation
+The PCA shows a clear separation between tumor and normal colon samples, with tumor samples displaying greater heterogeneity.
 
-### Results
+![TCGA-COAD PCA plot](figures/tcga_coad_pca_plot.png)
+
+### Volcano plot: global differential expression pattern
+The volcano plot highlights widespread transcriptomic differences between tumor and normal samples, with both strongly upregulated and downregulated genes.
+
+![TCGA-COAD volcano plot](figures/tcga_coad_volcano_plot.png)
+
+### Heatmap: top differentially expressed genes
+The top differentially expressed genes are sufficient to visually separate most tumor and normal samples.
+
+![TCGA-COAD top 30 heatmap](figures/tcga_coad_top30_heatmap.png)
+
+## Main result file
 - `results/tcga_coad_top30_heatmap_genes.csv`
 
 ## Repository structure
